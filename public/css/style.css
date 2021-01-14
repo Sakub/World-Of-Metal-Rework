@@ -1,12 +1,130 @@
+:root {
+    --dark-primary: #14182A;
+    --dark-sub: #1B2039;
+    --blue-primary: #3BC8E7;
+}
+
 .bg-main {
-    background-color: #14182A;
+    background-color: var(--dark-primary);
 }
+
 .bg-sub {
-    background-color: #1B2039;
+    background-color: var(--dark-sub);
 }
+
 .text-custom-primary {
-    color: #3BC8E7;
+    color: var(--blue-primary);
 }
+
 .bg-custom-primary {
-    background-color: #3BC8E7;
+    background-color: var(--blue-primary);
+}
+
+.hero {
+    height: 100vh;
+    background: url('../img/hero.jpg') no-repeat center;
+    background-size: cover;
+    -webkit-box-shadow: 0px 2px 66px 5px rgba(22, 25, 42, 1);
+    -moz-box-shadow: 0px 2px 66px 5px rgba(22, 25, 42, 1);
+    box-shadow: 0px 2px 66px 5px rgba(22, 25, 42, 1);
+    position: relative;
+}
+
+.hero__sectionsWrapper {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 90%;
+}
+
+.hero__leftSection {
+    flex: 0 40%;
+}
+
+.hero__rightSection {
+    flex: 0 55%;
+    margin-left: auto;
+}
+
+.hero__header {
+    font-size: 3rem;
+}
+
+.hero__topBand {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.hero__button {
+    border: 2px solid var(--blue-primary);
+    transition: background .3s ease-in-out;
+}
+
+.hero__button:hover {
+    background-color: var(--blue-primary);
+}
+
+.hero__footer {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    flex-direction: row;
+    width: 100%;
+}
+
+.hero__footer__icons {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+}
+
+.hero__footer__mouse {
+    width: 30px;
+    height: 55px;
+    box-shadow: inset 0 0 0 2px var(--blue-primary);
+    border-radius: 25px;
+    position: relative;
+}
+
+
+.hero__footer__mouse::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--blue-primary);
+    top: 8px;
+    border-radius: 8px;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-name: scroll;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.hero__footer__icon {
+    transition: color .3s ease-in-out;
+}
+.hero__footer__icon:hover {
+    color: #fff;
+}
+
+
+@keyframes scroll {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(36px);
+        
+    }
+
 }

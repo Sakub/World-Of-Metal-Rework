@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-sub">
+<nav class="navbar navbar-expand-md bg-sub fixed-top">
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item p-2">
@@ -15,7 +15,7 @@
                 <a class="nav-link text-white font-weight-bold" href="#">ALBUMS</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="btn bg-custom-primary text-white rounded-pill font-weight-bold">REGISTER</a>
+                <a href="#" class="btn bg-custom-primary text-white rounded-pill font-weight-bold navbar__button">REGISTER</a>
             </li>
         </ul>
     </div>
