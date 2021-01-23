@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="hero__footer text-white">
-        <a href="#" class="mx-auto mb-5">
+        <a href="#content" class="mx-auto mb-5">
             <div class="hero__footer__mouse"></div>
         </a>
         <div class="hero__footer__icons">
@@ -29,82 +29,33 @@
         </div>
     </div>
 </div>
-<div class="mt-5 mx-auto content">
+<div class="mt-5 mx-auto content" id="content">
     <div class="topArtists">
         <div class="row">
             <div class="w-50">
                 <p class="topArtists__heading section__heading text-custom-primary font-weight-bold">Top artists</p>
             </div>
             <div class="w-50">
-                <p class="topArtists__viewMore section__viewMore text-white font-weight-bold text-right">View more</p>
+                <p class="topArtists__viewMore section__viewMore text-right"><a href="{{route('bands.index')}}" class="text-white font-weight-bold text-decoration-none">View more</a></p>
             </div>
         </div>
-        {{-- Later bands gonna be loaded from database --}}
-        <div class="row topArtists__bands justify-content-between">
-            <div class="topArtists__band">
-                <div class="band__imageWrapper">
-                    <img src="{{URL::asset('./img/taimBand.jpg')}}" alt="" class="band__image">
+        <div class="row topArtists__bands justify-content-center">
+            @foreach ($bands as $band)
+                <div class="topArtists__band mx-2">
+                    <div class="band__imageWrapper">
+                        <a href="{{route("bands.show", $band->id)}}">
+                            <img src="{{URL::asset($band->image_url)}}" alt="{{$band->name}}" class="band__image">
+                        </a>
+                    </div>
+                    <div class="row font-weight-bold band__caption m-0 pt-2 justify-content-between">
+                        <p class="band__title text-white mb-0">{{$band->name}}</p>
+                        <p class="band__rating text-warning mb-0">{{$band->rating}}<i class="bi bi-star-fill"></i></p>
+                    </div>
                 </div>
-                <div class="row font-weight-bold band__caption m-0 pt-2 justify-content-between">
-                    <p class="band__title text-white mb-0">Thy Art Is Murder</p>
-                    <p class="band__rating text-warning mb-0">5<i class="bi bi-star-fill"></i></p>
-                </div>
-            </div>
-            <div class="topArtists__band">
-                <div class="band__imageWrapper">
-                    <img src="{{URL::asset('./img/taimBand.jpg')}}" alt="" class="band__image">
-                </div>
-                <div class="row font-weight-bold band__caption m-0 pt-2 justify-content-between">
-                    <p class="band__title text-white mb-0">Thy Art Is Murder</p>
-                    <p class="band__rating text-warning mb-0">5<i class="bi bi-star-fill"></i></p>
-                </div>
-            </div>
-            <div class="topArtists__band">
-                <div class="band__imageWrapper">
-                    <img src="{{URL::asset('./img/taimBand.jpg')}}" alt="" class="band__image">
-                </div>
-                <div class="row font-weight-bold band__caption m-0 pt-2 justify-content-between">
-                    <p class="band__title text-white mb-0">Thy Art Is Murder</p>
-                    <p class="band__rating text-warning mb-0">5<i class="bi bi-star-fill"></i></p>
-                </div>
-            </div>
-            <div class="topArtists__band">
-                <div class="band__imageWrapper">
-                    <img src="{{URL::asset('./img/taimBand.jpg')}}" alt="" class="band__image">
-                </div>
-                <div class="row font-weight-bold band__caption m-0 pt-2 justify-content-between">
-                    <p class="band__title text-white mb-0">Thy Art Is Murder</p>
-                    <p class="band__rating text-warning mb-0">5<i class="bi bi-star-fill"></i></p>
-                </div>
-            </div>
-            <div class="topArtists__band">
-                <div class="band__imageWrapper">
-                    <img src="{{URL::asset('./img/taimBand.jpg')}}" alt="" class="band__image">
-                </div>
-                <div class="row font-weight-bold band__caption m-0 pt-2 justify-content-between">
-                    <p class="band__title text-white mb-0">Thy Art Is Murder</p>
-                    <p class="band__rating text-warning mb-0">5<i class="bi bi-star-fill"></i></p>
-                </div>
-            </div>
-            <div class="topArtists__band">
-                <div class="band__imageWrapper">
-                    <img src="{{URL::asset('./img/taimBand.jpg')}}" alt="" class="band__image">
-                </div>
-                <div class="row font-weight-bold band__caption m-0 pt-2 justify-content-between">
-                    <p class="band__title text-white mb-0">Thy Art Is Murder</p>
-                    <p class="band__rating text-warning mb-0">5<i class="bi bi-star-fill"></i></p>
-                </div>
-            </div>
-            <div class="topArtists__band">
-                <div class="band__imageWrapper">
-                    <img src="{{URL::asset('./img/taimBand.jpg')}}" alt="" class="band__image">
-                </div>
-                <div class="row font-weight-bold band__caption m-0 pt-2 justify-content-between">
-                    <p class="band__title text-white mb-0">Thy Art Is Murder</p>
-                    <p class="band__rating text-warning mb-0">5<i class="bi bi-star-fill"></i></p>
-                </div>
-            </div>
+            @endforeach
+          
            
+            
             
         </div>
     </div>

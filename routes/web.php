@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\BandController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,4 +16,6 @@ use App\Http\Controllers\MainController;
 
 
 Route::get('/','App\Http\Controllers\MainController@index');
+Route::resource('bands', BandController::class);
+
 
