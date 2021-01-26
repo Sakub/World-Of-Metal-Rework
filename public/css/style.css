@@ -175,6 +175,15 @@
 .band:hover .band__overlay .band__name, .band:hover .band__overlay .band__rating {
     opacity: 1;
 }
+.filters__searchbar {
+    border: 2px solid var(--blue-primary);
+    outline: none;
+    padding: 5px;
+    font-style: italic;
+}
+.filters__searchbar::placeholder {
+    color: var(--blue-primary);
+}
 @keyframes mouseScroll {
     0% {
         opacity: 1;
