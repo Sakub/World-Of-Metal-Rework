@@ -1,19 +1,26 @@
 const topArtistsWrapper = document.querySelector('.topArtists__bands');
 const searchbar = document.querySelector('.filters__searchbar');
+const navbar = document.querySelector('.navbar');
 
 let searchValue = '';
 let topArtists = document.querySelectorAll('.topArtists__band');
 let topArtistsNumber = topArtists.length;
 
-if (topArtistsNumber == 7) {
-    topArtistsWrapper.classList.remove('justify-content-center');
-    topArtistsWrapper.classList.add('justify-content-between');
 
-    topArtists.forEach(topArtist => {
-        topArtist.classList.remove('mx-2');
-    });
+window.onload = () => {
+    if (window.location.pathname != '/') {
+        navbar.classList.remove('fixed-top');
+    } else {
+        if (topArtistsNumber == 7) {
+            topArtistsWrapper.classList.remove('justify-content-center');
+            topArtistsWrapper.classList.add('justify-content-between');
+        
+            topArtists.forEach(topArtist => {
+                topArtist.classList.remove('mx-2');
+            });
+        }
+    }
 }
-
 
 searchbar.addEventListener('keydown', event => {
     if (event.key === "Backspace") {
