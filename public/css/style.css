@@ -28,6 +28,7 @@
     background: #fff;
     transition: width .3s ease-in-out;
 }
+
 .anim-underline:hover::after {
     width: 100%;
 }
@@ -117,18 +118,20 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 .hero__footer__icon {
     transition: color .3s ease-in-out;
 }
+
 .hero__footer__icon:hover {
     color: #fff;
 }
+
 .content {
     width: 95%;
 }
+
 .topArtists__band {
     width: 230px;
     height: 240px;
@@ -138,25 +141,31 @@
     width: 100%;
     height: 220px;
 }
+
 .band__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
 }
+
 .section__heading {
     border-bottom: 2px solid var(--blue-primary);
     display: inline-block;
 }
+
 .bands__content {
     margin-top: 5vh;
 }
+
 .content__filters {
     flex: 0 30%;
 }
+
 .content__bands {
     flex: 0 70%;
 }
+
 .band {
     width: 200px;
     height: 200px;
@@ -164,6 +173,7 @@
     margin-bottom: 15px;
     position: relative;
 }
+
 .band__overlay {
     position: absolute;
     display: flex;
@@ -177,37 +187,46 @@
     border-radius: 10px;
     transition: background-color .3s ease-in-out;
 }
+
 .band:hover .band__overlay {
     background-color: rgba(59, 200, 231, 0.7);
 }
-.band__overlay .band__name, .band__overlay .band__rating {
+
+.band__overlay .band__name,
+.band__overlay .band__rating {
     opacity: 0;
     transition: opacity .3s ease-in-out;
 }
-.band:hover .band__overlay .band__name, .band:hover .band__overlay .band__rating {
+
+.band:hover .band__overlay .band__name,
+.band:hover .band__overlay .band__rating {
     opacity: 1;
 }
+
 .filters__searchbar {
     border: 2px solid var(--blue-primary);
     outline: none;
     padding: 5px;
     font-style: italic;
 }
+
 .filters__searchbar::placeholder {
     color: var(--blue-primary);
 }
+
 .filters__radio-wrapper {
     list-style-type: none;
     color: #fff;
     padding: 0;
 }
+
 .filters__filter:checked,
 .filters__filter:not(:checked) {
     display: none;
 }
-.filters__filter:checked + label,
-.filters__filter:not(:checked) + label
-{
+
+.filters__filter:checked+label,
+.filters__filter:not(:checked)+label {
     position: relative;
     padding-left: 28px;
     cursor: pointer;
@@ -216,8 +235,9 @@
     color: #fff;
     font-weight: bold;
 }
-.filters__filter:checked + label:before,
-.filters__filter:not(:checked) + label:before {
+
+.filters__filter:checked+label:before,
+.filters__filter:not(:checked)+label:before {
     content: '';
     position: absolute;
     left: 0;
@@ -228,8 +248,9 @@
     border-radius: 100%;
     background: transparent;
 }
-.filters__filter:checked + label:after,
-.filters__filter:not(:checked) + label:after {
+
+.filters__filter:checked+label:after,
+.filters__filter:not(:checked)+label:after {
     content: '';
     width: 18px;
     height: 18px;
@@ -241,16 +262,52 @@
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
 }
-.filters__filter:not(:checked) + label:after {
+
+.filters__filter:not(:checked)+label:after {
     opacity: 0;
     -webkit-transform: scale(0);
     transform: scale(0);
 }
-.filters__filter:checked + label:after {
+
+.filters__filter:checked+label:after {
     opacity: 1;
     -webkit-transform: scale(1);
     transform: scale(1);
 }
+
+.content__imageWrapper {
+    width: 400px;
+    height: 400px;
+}
+
+.content__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content__starsWrapper {
+    display: flex;
+}
+
+.content__star {
+    padding: 0 3px;
+    transition: color .2s ease-in-out;
+}
+
+.content__star:last-child {
+    padding-left: 0;
+}
+
+.content__star:hover~.content__star,
+.content__star:hover {
+    color: yellow;
+}
+
+.content__star--active {
+    color: yellow;
+}
+
 @keyframes mouseScroll {
     0% {
         opacity: 1;
@@ -259,13 +316,12 @@
     100% {
         opacity: 0;
         transform: translateY(36px);
-        
     }
 
 }
 
 /* This is code which gonna be used to make spotify-like marquees if band name gonna be too long, for now leaved as comment*/
-  /* .band__title {
+/* .band__title {
         width: 130px;
          -moz-transform:translateX(100%);
          -webkit-transform:translateX(100%);	
@@ -301,4 +357,3 @@
          }
         }
        */
-

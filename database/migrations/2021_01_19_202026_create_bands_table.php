@@ -20,7 +20,7 @@ class CreateBandsTable extends Migration
             $table->text('logo_url');
             $table->text('image_url');
             $table->year('created_year');
-            $table->year('broke_year');
+            $table->year('broke_year')->nullable();
             $table->integer('albums_released');
             $table->integer('members_number');
             $table->unsignedBigInteger('nationality_id');
