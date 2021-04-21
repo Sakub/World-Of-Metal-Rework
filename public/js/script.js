@@ -10,10 +10,8 @@ let topArtistsNumber = topArtists.length;
 
 function setupRatingStars() {
     ratingStars.forEach(ratingStar => {
-        ratingStar.addEventListener('click', event => {
-            giveRate(event.currentTarget)
-        });
-    })
+        ratingStar.addEventListener('click', event => giveRate(event.currentTarget));
+    });
 }
 
 window.onload = () => {
@@ -68,7 +66,7 @@ function search(fraze) {
 function giveRate(el) {
     const rate = el.getAttribute("data-rate");
     const starActiveClass = 'content__star--active';
-    
+
     let reversedRatingStars = [...ratingStars].reverse();
     
     ratingStars.forEach(rateStar => rateStar.classList.remove(starActiveClass));
