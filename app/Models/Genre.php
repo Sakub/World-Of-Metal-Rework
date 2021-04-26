@@ -12,4 +12,8 @@ class Genre extends Model
     protected $fillable = [
         'name'
     ];
+
+    public static function getGenresLength() {
+        return Genre::all()->count();
+    }
 }

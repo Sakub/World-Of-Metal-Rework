@@ -12,4 +12,8 @@ class Nationality extends Model
     protected $fillable = [ 
         'name'
     ];
+
+    public static function getNationalitiesLength() {
+        return Nationality::all()->count();
+    }
 }

@@ -16,7 +16,7 @@ class CreateBandsTable extends Migration
         Schema::create('bands', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->longText('description');
+            $table->longText('description', 200);
             $table->text('logo_url');
             $table->text('image_url');
             $table->year('created_year');

@@ -23,4 +23,5 @@ class Band extends Model
         'genre_id',
         'rating'
     ];
+
 }

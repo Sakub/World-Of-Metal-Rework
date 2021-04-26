@@ -4,6 +4,10 @@
     --blue-primary: #3BC8E7;
 }
 
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
 .bg-main {
     background-color: var(--dark-primary);
 }
@@ -186,6 +190,7 @@
     background-color: rgba(59, 200, 231, 0);
     border-radius: 10px;
     transition: background-color .3s ease-in-out;
+    text-align: center;
 }
 
 .band:hover .band__overlay {
@@ -275,38 +280,6 @@
     transform: scale(1);
 }
 
-.content__imageWrapper {
-    width: 400px;
-    height: 400px;
-}
-
-.content__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.content__starsWrapper {
-    display: flex;
-}
-
-.content__star {
-    padding: 0 3px;
-    transition: color .2s ease-in-out;
-}
-
-.content__star:last-child {
-    padding-left: 0;
-}
-
-.content__star:hover~.content__star,
-.content__star:hover {
-    color: yellow;
-}
-
-.content__star--active {
-    color: yellow;
-}
 
 @keyframes mouseScroll {
     0% {

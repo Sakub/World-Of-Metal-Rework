@@ -9,7 +9,7 @@
             <div class="content__filters">
                 <input type="text" placeholder="Search..." class="filters__searchbar text-custom-primary bg-transparent rounded-pill">
                 <ul class="filters__radio-wrapper mt-3">
-                    <li><input type="radio" name="filter" id="filters__best" class="filters__filter"><label for="filters__best" class="filter__label">Best</label></li>
+                    <li><input type="radio" checked name="filter" id="filters__best" class="filters__filter"><label for="filters__best" class="filter__label">Best</label></li>
                     <li><input type="radio" name="filter" id="filters__worst" class="filters__filter"><label for="filters__worst" class="filter__label">Worst</label></li>
                     <li><input type="radio" name="filter" id="filters__newest" class="filters__filter"><label for="filters__newest" class="filter__label">Newest</label></li>
                     <li><input type="radio" name="filter" id="filters__oldest" class="filters__filter"><label for="filters__oldest" class="filter__label">Oldest</label></li>

@@ -1,3 +1,5 @@
+// const SimpleScrollbar = require('simple-scrollbar');
+
 const topArtistsWrapper = document.querySelector('.topArtists__bands');
 const searchbar = document.querySelector('.filters__searchbar');
 const navbar = document.querySelector('.navbar');
@@ -18,6 +20,9 @@ window.onload = () => {
     if (window.location.pathname != '/') {
         navbar.classList.remove('fixed-top');
         setupRatingStars();
+
+        // bandAlbumsWrapper = document.querySelector('.content__albums');
+        // SimpleScrollbar.initEl(bandAlbumsWrapper);
     } else {
         if (topArtistsNumber == 7) {
             topArtistsWrapper.classList.remove('justify-content-center');
@@ -71,5 +76,5 @@ function giveRate(el) {
     
     ratingStars.forEach(rateStar => rateStar.classList.remove(starActiveClass));
 
-    for (let i = 0; i <= rate - 1; i++) reversedRatingStars[i].classList.add("content__star--active");
+    for (let i = 0; i <= rate - 1; i++) reversedRatingStars[i].classList.add(starActiveClass);
 }
