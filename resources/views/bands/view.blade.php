@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+    <div class="mask" style="background-image: url('{{$band->image_url}}')"></div>
     <div class="content mx-auto row mt-5 band__content">
         <div class="content__leftSection col">
             <div class="content__imageWrapper">

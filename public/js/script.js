@@ -19,6 +19,7 @@ window.onload = () => {
         navbar.classList.remove('fixed-top');
         setupRatingStars();
     } else {
+        navbarScroll();
         if (topArtistsNumber == 14) {
             [...topArtistsWrapper].forEach(el => {
                 el.classList.remove('justify-content-center');
