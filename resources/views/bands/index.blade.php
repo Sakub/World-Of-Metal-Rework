@@ -18,7 +18,7 @@
                 </ul>
 
 
-                {{ $bands->render() }}
+                <div class="filters__pagination">{{ $bands->render() }}</div>
             </div>
             <div class="content__bands">
                 <div class="row justify-content-end">

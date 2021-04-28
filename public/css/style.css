@@ -280,6 +280,11 @@ body {
     transform: scale(1);
 }
 
+.filters__pagination {
+    position: fixed;
+    bottom: 0;
+}
+
 
 @keyframes mouseScroll {
     0% {
