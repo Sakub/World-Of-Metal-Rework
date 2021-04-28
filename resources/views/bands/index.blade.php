@@ -16,6 +16,9 @@
                     <li><input type="radio" name="filter" id="filters__nameAsc" class="filters__filter"><label for="filters__nameAsc" class="filter__label">A-Z</label></li>
                     <li><input type="radio" name="filter" id="filters__nameDesc" class="filters__filter"><label for="filters__nameDesc" class="filter__label">Z-A</label></li>
                 </ul>
+
+
+                {{ $bands->render() }}
             </div>
             <div class="content__bands">
                 <div class="row justify-content-end">

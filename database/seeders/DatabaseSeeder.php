@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(NationalitySeeder::class);
         $this->call(GenreSeeder::class);
-        Band::factory(10)->create();
+        Band::factory(20)->create();
         $this->call(BandSeeder::class);
     }
 }

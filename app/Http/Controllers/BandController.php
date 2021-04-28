@@ -16,7 +16,7 @@ class BandController extends Controller
      */
     public function index()
     {
-        $bands = Band::limit(15)->orderByDesc('rating')->get();
+        $bands = Band::orderByDesc('rating')->paginate(15);
         return view("bands.index", compact('bands'));
     }
 
