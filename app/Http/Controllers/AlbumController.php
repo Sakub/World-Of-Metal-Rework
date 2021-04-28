@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Band;
-use App\Models\Genre;
 use App\Models\Album;
-use App\Models\Nationality;
+use App\Models\Band;
 use Illuminate\Http\Request;
 
-class BandController extends Controller
+class AlbumController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,8 +15,8 @@ class BandController extends Controller
      */
     public function index()
     {
-        $bands = Band::orderByDesc('rating')->paginate(15);
-        return view("bands.index", compact('bands'));
+        $albums = Album::orderByDesc('rating')->paginate(15);
+        return view('albums.index', compact('albums'));
     }
 
     /**
@@ -45,34 +43,23 @@ class BandController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Band  $band
+     * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function show(Band $band)
+    public function show(Album $album)
     {
-        $bandAlbums = [];
-
-        $genre = Genre::where('id', $band->genre_id)->first()->name;
-        $nationality = Nationality::where('id', $band->nationality_id)->first()->name;
-        $albums = Album::all();
-
-        $band->genre = $genre;
-        $band->nationality = $nationality;
-        foreach($albums as $album) {
-            if ($album["band_id"] == $band->id) array_push($bandAlbums, $album);
-        }
-        $band->albums = $bandAlbums;
-        
-        return view('bands.view', compact('band'));
+        $band = Band::where("id", $album->band_id)->first()->name;
+        $album->band = $band;
+        return view("albums.view", compact('album'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Band  $band
+     * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function edit(Band $band)
+    public function edit(Album $album)
     {
         //
     }
@@ -81,10 +68,10 @@ class BandController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Band  $band
+     * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Band $band)
+    public function update(Request $request, Album $album)
     {
         //
     }
@@ -92,10 +79,10 @@ class BandController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Band  $band
+     * @param  \App\Models\Album  $album
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Band $band)
+    public function destroy(Album $album)
     {
         //
     }

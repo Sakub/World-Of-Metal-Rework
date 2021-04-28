@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BandController;
+use App\Http\Controllers\AlbumController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,5 +18,6 @@ use App\Http\Controllers\BandController;
 
 Route::get('/','App\Http\Controllers\MainController@index');
 Route::resource('bands', BandController::class);
+Route::resource('albums', AlbumController::class);
 
 

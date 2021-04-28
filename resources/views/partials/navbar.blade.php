@@ -12,7 +12,7 @@
                 <a class="nav-link text-white font-weight-bold anim-underline" href="{{route('bands.index')}}">ARTISTS</a>
             </li>
             <li class="nav-item px-2">
-                <a class="nav-link text-white font-weight-bold anim-underline" href="#">ALBUMS</a>
+                <a class="nav-link text-white font-weight-bold anim-underline" href="{{route('albums.index')}}">ALBUMS</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="btn bg-custom-primary text-white rounded-pill font-weight-bold navbar__button">REGISTER</a>

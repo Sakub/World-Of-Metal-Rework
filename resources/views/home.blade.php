@@ -53,10 +53,32 @@
                     </div>
                 </div>
             @endforeach
-          
-           
-            
-            
+        </div>
+        <div class="row mt-5">
+            <div class="w-50">
+                <p class="topArtists__heading section__heading text-custom-primary font-weight-bold">Top albums</p>
+            </div>
+            <div class="w-50">
+                <p class="topArtists__viewMore section__viewMore text-right"><a href="{{route('albums.index')}}" class="text-white font-weight-bold text-decoration-none anim-underline d-inline-block">View more</a></p>
+            </div>
+        </div>
+        <div class="row topArtists__bands justify-content-center">
+            @foreach ($albums as $album)
+                <div class="topArtists__band mx-2">
+                    <div class="band__imageWrapper">
+                        <a href="{{route("albums.show", $album->id)}}">
+                            <img src="{{URL::asset($album->image_url)}}" alt="{{$album->name}}" class="band__image">
+                        </a>
+                    </div>
+                    <div class="row font-weight-bold band__caption m-0 pt-2 justify-content-between">
+                        <p class="band__title text-white mb-0">{{$album->name}}</p>
+                        <p class="band__rating text-warning mb-0">{{$album->rating}}<i class="bi bi-star-fill"></i></p>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
     @endsection
+@push('styles')
+    <link rel="stylesheet" href="{{asset("css/home.css")}}">
+@endpush

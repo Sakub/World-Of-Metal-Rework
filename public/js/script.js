@@ -1,6 +1,4 @@
-// const SimpleScrollbar = require('simple-scrollbar');
-
-const topArtistsWrapper = document.querySelector('.topArtists__bands');
+const topArtistsWrapper = document.querySelectorAll('.topArtists__bands');
 const searchbar = document.querySelector('.filters__searchbar');
 const navbar = document.querySelector('.navbar');
 const ratingStars = document.querySelectorAll('.content__star');
@@ -20,15 +18,14 @@ window.onload = () => {
     if (window.location.pathname != '/') {
         navbar.classList.remove('fixed-top');
         setupRatingStars();
-
-        // bandAlbumsWrapper = document.querySelector('.content__albums');
-        // SimpleScrollbar.initEl(bandAlbumsWrapper);
     } else {
-        if (topArtistsNumber == 7) {
-            topArtistsWrapper.classList.remove('justify-content-center');
-            topArtistsWrapper.classList.add('justify-content-between');
+        if (topArtistsNumber == 14) {
+            [...topArtistsWrapper].forEach(el => {
+                el.classList.remove('justify-content-center');
+                el.classList.add('justify-content-between');
+            });
 
-            topArtists.forEach(topArtist => {
+            [...topArtists].forEach(topArtist => {
                 topArtist.classList.remove('mx-2');
             });
         }
@@ -36,17 +33,12 @@ window.onload = () => {
 }
 
 searchbar.addEventListener('keydown', event => {
-    if (event.key === "Backspace") {
-        searchValue = searchValue.slice(0, -1);
-    } else if (event.key === "Tab" || event.key === "Enter" || event.key === "Shift" || event.key === "Control") {
-        return;
-    } else {
-        searchValue += event.key;
-    }
+    if (event.key === "Backspace") searchValue = searchValue.slice(0, -1);
+    else if (event.key === "Tab" || event.key === "Enter" || event.key === "Shift" || event.key === "Control") return;
+    else searchValue += event.key;
+
     search(searchValue);
-
 });
-
 
 function getItems() {
     let items;
@@ -73,7 +65,7 @@ function giveRate(el) {
     const starActiveClass = 'content__star--active';
 
     let reversedRatingStars = [...ratingStars].reverse();
-    
+
     ratingStars.forEach(rateStar => rateStar.classList.remove(starActiveClass));
 
     for (let i = 0; i <= rate - 1; i++) reversedRatingStars[i].classList.add(starActiveClass);

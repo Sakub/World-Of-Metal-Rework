@@ -24,4 +24,8 @@ class Band extends Model
         'rating'
     ];
 
+    public static function getBandsLength() {
+        return Band::all()->count();
+    }
+
 }

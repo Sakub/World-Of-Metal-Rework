@@ -25,16 +25,20 @@
         </div>
         <div class="content__rightSection col">
             <p class="font-weight-bold text-white text-right h2">List of albums:</p>
-            @if (!$band->albums_released)
+            @if (!$band->albums)
                 <p class="text-white text-right">This band hasn't released any albums yet</p>
             @else
                 <div class="content__albums" data-simplebar>
-                    @for ($i = 1; $i<=$band->albums_released; $i++)
+                    @php $i = 1; @endphp
+                    @foreach ($band->albums as $album)
+                    <a href="{{route("albums.show", $album->id)}}">
                         <div class="content__album text-white font-weight-bold">
                             <p class="album__iterator">{{ $i }}.</p>
-                            <p class="album__title"><span class="album__rating">5 <i class="bi bi-star-fill"></span></i>Lorem Ipsum  </p>
+                            <p class="album__title"><span class="album__rating"> {{ $album->rating }} <i class="bi bi-star-fill"></span></i>{{ $album->name }}</p>
                         </div>
-                    @endfor
+                    </a>
+                        @php $i++; @endphp
+                    @endforeach
                 </div>  
             @endif
            
