@@ -38,3 +38,9 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script src="{{asset("js/search.js")}}"></script>
+@endpush
+@push('styles')
+    <link rel="stylesheet" href="{{asset('css/searchView.css')}}">
+@endpush

@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@include('layouts.app')
 @section('content')
-    <div class="content mx-auto bands__content">
+    <div class="content mx-auto search__content">
         <div class="row justify-content-between">
             <p class="section__heading text-custom-primary font-weight-bold">Filters:</p>
-            <p class="section__viewMore text-white font-weight-bold">Artists</p>
+            <p class="section__viewMore text-white font-weight-bold">Search</p>
         </div>
         <div class="row">
             <div class="content__filters">
@@ -18,17 +18,17 @@
                 </ul>
 
 
-                <div class="filters__pagination">{{ $bands->render() }}</div>
+                <div class="filters__pagination">{{ $items->render() }}</div>
             </div>
-            <div class="content__bands">
+            <div class="content__items">
                 <div class="row justify-content-end">
-                    @foreach($bands as $band)
-                        <div class="band" data-name="{{$band->name}}">
-                            <a href="{{route('bands.show', $band->id)}}">
-                                <img src="{{asset($band->image_url)}}" alt="{{$band->name}}" class="band__image">
-                                <div class="band__overlay text-white">
-                                    <div class="band__name">{{$band->name}}</div>
-                                    <div class="band__rating font-weight-bold">{{$band->rating}} <i class="bi bi-star-fill"></i></div>
+                    @foreach($items as $item)
+                        <div class="item" data-name="{{$item->name}}">
+                            <a href="{{route($pathToShow, $item->id)}}">
+                                <img src="{{asset($item->image_url)}}" alt="{{$item->name}}" class="band__image">
+                                <div class="item__overlay text-white">
+                                    <div class="item__name">{{$item->name}}</div>
+                                    <div class="item__rating font-weight-bold">{{$item->rating}} <i class="bi bi-star-fill"></i></div>
                                 </div>
                             </a>
                         </div>
@@ -39,8 +39,8 @@
     </div>
 @endsection
 @push('scripts')
-    <script src="{{asset("js/search.js")}}"></script>
+    <script src="{{asset('js/search.js')}}"></script>
 @endpush
 @push('styles')
-    <link rel="stylesheet" href="{{asset('css/searchView.css')}}">
+    <link rel="stylesheet" href="{{asset('searchView.css')}})">
 @endpush

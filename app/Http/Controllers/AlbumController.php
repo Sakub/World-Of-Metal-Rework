@@ -16,7 +16,8 @@ class AlbumController extends Controller
     public function index()
     {
         $albums = Album::orderByDesc('rating')->paginate(15);
-        return view('albums.index', compact('albums'));
+        $pathToShow = 'albums.show';
+        return view('albums.index', compact(['albums', 'pathToShow']));
     }
 
     /**

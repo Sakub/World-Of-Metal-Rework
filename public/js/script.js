@@ -1,9 +1,7 @@
 const topArtistsWrapper = document.querySelectorAll('.topArtists__bands');
-const searchbar = document.querySelector('.filters__searchbar');
 const navbar = document.querySelector('.navbar');
 const ratingStars = document.querySelectorAll('.content__star');
 
-let searchValue = '';
 let topArtists = document.querySelectorAll('.topArtists__band');
 let topArtistsNumber = topArtists.length;
 
@@ -30,34 +28,6 @@ window.onload = () => {
                 topArtist.classList.remove('mx-2');
             });
         }
-    }
-}
-
-searchbar.addEventListener('keydown', event => {
-    if (event.key === "Backspace") searchValue = searchValue.slice(0, -1);
-    else if (event.key === "Tab" || event.key === "Enter" || event.key === "Shift" || event.key === "Control") return;
-    else searchValue += event.key;
-
-    search(searchValue);
-});
-
-function getItems() {
-    let items;
-
-    if (window.location.pathname == '/bands') items = document.querySelectorAll('.band');
-    if (window.location.pathname == '/albums') items = document.querySelectorAll('.album');
-
-    return items;
-}
-
-function search(fraze) {
-    let items = getItems();
-
-    for (let i = 0; i < items.length; i++) {
-        let itemName = items[i].getAttribute('data-name').toLowerCase();
-
-        if (itemName.indexOf(fraze) > -1) items[i].style.display = '';
-        else items[i].style.display = 'none';
     }
 }
 
