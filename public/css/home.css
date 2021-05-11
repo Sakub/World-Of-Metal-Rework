@@ -101,6 +101,22 @@
 .navbar {
     transition: background-color .3s ease-in-out;
 }
+.helpUs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    background-image: url('../img/addBand.jpg');
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    background-color: var(--dark-primary);
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+}
 
 @keyframes mouseScroll {
     0% {

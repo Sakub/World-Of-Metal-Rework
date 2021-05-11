@@ -78,6 +78,11 @@
             @endforeach
         </div>
     </div>
+    <div class="helpUs text-white mt-5">
+        <p class="helpUs__header display-4 font-weight-bold">Help us</p>
+        <p class="helpUs__subtext">Add bands which we don't know! It's free.</p>
+        <button class="btn text-white font-weight-bold rounded-pill hero__button">ADD BAND</button>
+    </div>
     @endsection
 @push('styles')
     <link rel="stylesheet" href="{{asset("css/home.css")}}">
