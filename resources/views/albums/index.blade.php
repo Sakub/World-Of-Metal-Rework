@@ -9,21 +9,21 @@
             <div class="content__filters">
                 <input type="text" placeholder="Search..." class="filters__searchbar text-custom-primary bg-transparent rounded-pill">
                 <ul class="filters__radio-wrapper mt-3">
-                    <li><input type="radio" checked name="filter" id="filters__best" class="filters__filter"><label for="filters__best" class="filter__label">Best</label></li>
-                    <li><input type="radio" name="filter" id="filters__worst" class="filters__filter"><label for="filters__worst" class="filter__label">Worst</label></li>
-                    <li><input type="radio" name="filter" id="filters__newest" class="filters__filter"><label for="filters__newest" class="filter__label">Newest</label></li>
-                    <li><input type="radio" name="filter" id="filters__oldest" class="filters__filter"><label for="filters__oldest" class="filter__label">Oldest</label></li>
-                    <li><input type="radio" name="filter" id="filters__nameAsc" class="filters__filter"><label for="filters__nameAsc" class="filter__label">A-Z</label></li>
-                    <li><input type="radio" name="filter" id="filters__nameDesc" class="filters__filter"><label for="filters__nameDesc" class="filter__label">Z-A</label></li>
+                    <li><input type="radio" data-name="filters__best" checked name="filter" id="filters__best" class="filters__filter"><label for="filters__best" class="filter__label">Best</label></li>
+                    <li><input type="radio" data-name="filters__worst" name="filter" id="filters__worst" class="filters__filter"><label for="filters__worst" class="filter__label">Worst</label></li>
+                    <li><input type="radio" data-name="filters__newest" name="filter" id="filters__newest" class="filters__filter"><label for="filters__newest" class="filter__label">Newest</label></li>
+                    <li><input type="radio" data-name="filters__oldest" name="filter" id="filters__oldest" class="filters__filter"><label for="filters__oldest" class="filter__label">Oldest</label></li>
+                    <li><input type="radio" data-name="filters__nameAsc" name="filter" id="filters__nameAsc" class="filters__filter"><label for="filters__nameAsc" class="filter__label">A-Z</label></li>
+                    <li><input type="radio" data-name="filters__nameDesc" name="filter" id="filters__nameDesc" class="filters__filter"><label for="filters__nameDesc" class="filter__label">Z-A</label></li>
                 </ul>
 
 
                 <div class="filters__pagination">{{ $albums->render() }}</div>
             </div>
             <div class="content__bands">
-                <div class="row justify-content-end">
+                <div class="row justify-content-end content__bandsWrapper">
                     @foreach($albums as $album)
-                        <div class="band" data-name="{{$album->name}}">
+                        <div class="band album" data-name="{{$album->name}}" data-rating="{{$album->rating}}" data-released-year={{$album->release_year}}>
                             <a href="{{route('albums.show', $album->id)}}">
                                 <img src="{{asset($album->image_url)}}" alt="{{$album->name}}" class="band__image">
                                 <div class="band__overlay text-white">
@@ -38,3 +38,6 @@
         </div>
     </div>
 @endsection
+@push("scripts")
+    <script src="{{asset("js/search.js")}}"></script>
+@endpush
