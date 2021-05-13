@@ -21,11 +21,11 @@
                 <div class="filters__pagination">{{ $items->render() }}</div>
             </div>
             <div class="content__items">
-                <div class="row justify-content-end">
+                <div class="row justify-content-end content__itemsWrapper">
                     @foreach($items as $item)
-                        <div class="item" data-name="{{$item->name}}">
+                        <div class="item" data-name="{{$item->name}}" @if($item->created_year) data-created-year="{{$item->created_year}}" @else data-released-year="{{$item->release_year}}" @endif>
                             <a href="{{route($item->getPathAttribute(), $item->id)}}">
-                                <img src="{{asset($item->image_url)}}" alt="{{$item->name}}" class="band__image">
+                                <img src="{{asset($item->image_url)}}" alt="{{$item->name}}" class="item__image">
                                 <div class="item__overlay text-white">
                                     <div class="item__name">{{$item->name}}</div>
                                     <div class="item__rating font-weight-bold">{{$item->rating}} <i class="bi bi-star-fill"></i></div>

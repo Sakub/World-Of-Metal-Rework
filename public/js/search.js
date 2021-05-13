@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', () => {
     const worstFilter = document.querySelector("#filters__worst")
     const bestFilter = document.querySelector("#filters__best")
@@ -6,12 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const newestFilter = document.querySelector("#filters__newest")
     const aZFilter =  document.querySelector("#filters__nameAsc")
     const zAFilter =  document.querySelector("#filters__nameDesc")
-    
-    const albumsWrapper = document.querySelector('.content__bandsWrapper')
+    const searchbar = document.querySelector(".filters__searchbar")
 
-    const filters = [worstFilter, bestFilter, oldestFilter, newestFilter, aZFilter, zAFilter];
+    const albumsWrapper = document.querySelector('.content__itemsWrapper')
 
-    let albumsNodeList = document.querySelectorAll('.band');
+    const filters = [worstFilter, bestFilter, oldestFilter, newestFilter, aZFilter, zAFilter]
+
+    let albumsNodeList = document.querySelectorAll('.item');
+    let searchValue = ''
 
     function rerenderItems(array, filteredArray) {
         array.forEach(item => item.remove())
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filters.forEach(filter => {
         filter.onclick = () => {
             albums = [...albumsNodeList]
+            console.log(albums)
             let {name} = filter.dataset
             if (name === 'filters__best') filteredArray = [...albumsNodeList]
             else if (name === 'filters__worst') filteredArray = albums.reverse()
@@ -40,37 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
             rerenderItems(albums, filteredArray)
         }
     })
-}) 
-=======
-const searchbar = document.querySelector(".filters__searchbar");
-console.log(searchbar)
-let searchValue = '';
-searchbar.addEventListener('keydown', event => {
-    console.log("dupa")
+
+    
+    searchbar.addEventListener('keydown', event => {
     if (event.key === "Backspace") searchValue = searchValue.slice(0, -1);
     else if (event.key === "Tab" || event.key === "Enter" || event.key === "Shift" || event.key === "Control") return;
     else searchValue += event.key;
 
     search(searchValue);
-});
+    });
 
-function getItems() {
-    let items;
+    function search(fraze) {
+        let items = document.querySelectorAll('.item')
 
-    if (window.location.pathname == '/bands') items = document.querySelectorAll('.band');
-    if (window.location.pathname == '/albums') items = document.querySelectorAll('.band');
+        for (let i = 0; i < items.length; i++) {
+            let itemName = items[i].getAttribute('data-name').toLowerCase();
 
-    return items;
-}
-
-function search(fraze) {
-    let items = getItems();
-
-    for (let i = 0; i < items.length; i++) {
-        let itemName = items[i].getAttribute('data-name').toLowerCase();
-
-        if (itemName.indexOf(fraze) > -1) items[i].style.display = '';
-        else items[i].style.display = 'none';
+            if (itemName.indexOf(fraze) > -1) items[i].style.display = '';
+            else items[i].style.display = 'none';
+        }
     }
-}
->>>>>>> searchView
+}) 
+

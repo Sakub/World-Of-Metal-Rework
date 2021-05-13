@@ -36,7 +36,7 @@
                 <p class="topArtists__heading section__heading text-custom-primary font-weight-bold">Top artists</p>
             </div>
             <div class="w-50">
-                <p class="topArtists__viewMore section__viewMore text-right"><a href="{{route('bands.index')}}" class="text-white font-weight-bold text-decoration-none anim-underline d-inline-block">View more</a></p>
+                <p class="topArtists__viewMore section__viewMore text-right"><a href="{{url('/search/bands')}}" class="text-white font-weight-bold text-decoration-none anim-underline d-inline-block">View more</a></p>
             </div>
         </div>
         <div class="row topArtists__bands justify-content-center">
@@ -59,7 +59,7 @@
                 <p class="topArtists__heading section__heading text-custom-primary font-weight-bold">Top albums</p>
             </div>
             <div class="w-50">
-                <p class="topArtists__viewMore section__viewMore text-right"><a href="{{route('albums.index')}}" class="text-white font-weight-bold text-decoration-none anim-underline d-inline-block">View more</a></p>
+                <p class="topArtists__viewMore section__viewMore text-right"><a href="{{url('/search/albums')}}" class="text-white font-weight-bold text-decoration-none anim-underline d-inline-block">View more</a></p>
             </div>
         </div>
         <div class="row topArtists__bands justify-content-center">
