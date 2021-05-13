@@ -11,17 +11,6 @@ use Illuminate\Http\Request;
 class BandController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $bands = Band::orderByDesc('rating')->paginate(15);
-        return view("bands.index", compact('bands'));
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response

@@ -27,5 +27,8 @@ class Band extends Model
     public static function getBandsLength() {
         return Band::all()->count();
     }
+    public function getPathAttribute() {
+        return 'bands.show';
+    }
 
 }
