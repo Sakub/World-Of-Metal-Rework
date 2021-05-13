@@ -1,5 +1,8 @@
-    <div class="fixed-bottom bg-primary text-white p-2">
-        Copyright &copy; 2020/2021
-    </div>
+  <!-- Scripts -->
+  <script src="{{ asset('js/app.js') }}" defer></script>
+  <script src="{{ asset('js/script.js') }}" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js"></script>
+  @stack('scripts')
+
 </body>
 </html>

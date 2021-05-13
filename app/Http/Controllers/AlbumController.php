@@ -8,16 +8,6 @@ use Illuminate\Http\Request;
 
 class AlbumController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        $albums = Album::orderByDesc('rating')->paginate(15);
-        return view('albums.index', compact('albums'));
-    }
 
     /**
      * Show the form for creating a new resource.

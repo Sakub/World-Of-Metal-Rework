@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\BandController;
 use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\SearchController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +18,8 @@ use App\Http\Controllers\AlbumController;
 
 
 Route::get('/','App\Http\Controllers\MainController@index');
+Route::get('/search/bands','App\Http\Controllers\SearchController@searchForBands');
+Route::get('/search/albums','App\Http\Controllers\SearchController@searchForAlbums');
 Route::resource('bands', BandController::class);
 Route::resource('albums', AlbumController::class);
 

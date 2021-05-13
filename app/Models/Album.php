@@ -18,4 +18,7 @@ class Album extends Model
         'rating'
     ];
 
+    public function getPathAttribute() {
+        return 'albums.show';
+    }
 }
