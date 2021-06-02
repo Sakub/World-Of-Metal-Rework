@@ -12,4 +12,9 @@ class Role extends Model
     protected $fillable = [
         'name'
     ];
+
+    public static function getAdminRoleId() {
+        $row = Role::where('name', 'admin')->get();
+        return $row[0]->id;
+    }
 }
