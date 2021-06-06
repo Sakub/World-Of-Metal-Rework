@@ -118,6 +118,10 @@
     background-attachment: fixed;
 }
 
+.dropdown-item:hover {
+    background-color: var(--dark-primary) !important;
+}
+
 @keyframes mouseScroll {
     0% {
         opacity: 1;

@@ -5,6 +5,7 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\BandController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +19,13 @@ use App\Http\Controllers\SearchController;
 
 
 Route::get('/','App\Http\Controllers\MainController@index');
+
 Route::get('/search/bands','App\Http\Controllers\SearchController@searchForBands');
 Route::get('/search/albums','App\Http\Controllers\SearchController@searchForAlbums');
+
 Route::resource('bands', BandController::class);
 Route::resource('albums', AlbumController::class);
 
+Route::resource('user', UserController::class);
 
+Auth::routes();

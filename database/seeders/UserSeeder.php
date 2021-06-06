@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@admin.com',
             'password' => 'haslo',
-            'role_id' => Role::getAdminRoleId()
+            'role_id' => Role::getRoleId('admin')
         ]);
     }
 }

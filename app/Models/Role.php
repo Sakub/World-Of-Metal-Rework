@@ -13,8 +13,9 @@ class Role extends Model
         'name'
     ];
 
-    public static function getAdminRoleId() {
-        $row = Role::where('name', 'admin')->get();
+    public static function getRoleId($roleName) {
+        $row = Role::where('name', $roleName)->get();
         return $row[0]->id;
     }
+
 }

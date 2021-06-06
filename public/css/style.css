@@ -23,6 +23,9 @@ body {
 .bg-custom-primary {
     background-color: var(--blue-primary);
 }
+.border-custom-primary {
+    border: 1px solid var(--blue-primary);
+}
 
 .anim-underline::after {
     content: '';
