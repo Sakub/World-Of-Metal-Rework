@@ -7,17 +7,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const zAFilter =  document.querySelector("#filters__nameDesc")
     const searchbar = document.querySelector(".filters__searchbar")
 
-    const albumsWrapper = document.querySelector('.content__itemsWrapper')
+    const itemsWrapper = document.querySelector('.content__itemsWrapper')
 
     const filters = [worstFilter, bestFilter, oldestFilter, newestFilter, aZFilter, zAFilter]
 
-    let albumsNodeList = document.querySelectorAll('.item');
+    let itemsNodeList = document.querySelectorAll('.item');
     let searchValue = ''
 
     function rerenderItems(array, filteredArray) {
         array.forEach(item => item.remove())
 
-        filteredArray.forEach(item => albumsWrapper.appendChild(item))
+        filteredArray.forEach(item => itemsWrapper.appendChild(item))
     }
     function orderByName(el1, el2) {
         return el1.dataset.name.localeCompare(el2.dataset.name)
@@ -29,17 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filters.forEach(filter => {
         filter.onclick = () => {
-            albums = [...albumsNodeList]
-            console.log(albums)
+            items = [...itemsNodeList]
             let {name} = filter.dataset
-            if (name === 'filters__best') filteredArray = [...albumsNodeList]
-            else if (name === 'filters__worst') filteredArray = albums.reverse()
-            else if (name === 'filters__newest') filteredArray = albums.sort((el1, el2) => orderByYear(el2, el1))
-            else if (name === 'filters__oldest') filteredArray = albums.sort((el1, el2) => orderByYear(el1, el2))
-            else if (name === 'filters__nameAsc') filteredArray = albums.sort((el1, el2) => orderByName(el1, el2))
-            else if (name === 'filters__nameDesc') filteredArray = albums.sort((el1, el2) => orderByName(el2, el1))
+            if (name === 'filters__best') filteredArray = [...itemsNodeList]
+            else if (name === 'filters__worst') filteredArray = items.reverse()
+            else if (name === 'filters__newest') filteredArray = items.sort((el1, el2) => orderByYear(el2, el1))
+            else if (name === 'filters__oldest') filteredArray = items.sort((el1, el2) => orderByYear(el1, el2))
+            else if (name === 'filters__nameAsc') filteredArray = items.sort((el1, el2) => orderByName(el1, el2))
+            else if (name === 'filters__nameDesc') filteredArray = items.sort((el1, el2) => orderByName(el2, el1))
             
-            rerenderItems(albums, filteredArray)
+            rerenderItems(items, filteredArray)
         }
     })
 
