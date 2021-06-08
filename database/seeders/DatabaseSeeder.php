@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Band;
 use App\Models\Album;
 use App\Models\Role;
+use App\Models\Track;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -23,5 +24,6 @@ class DatabaseSeeder extends Seeder
         Band::factory(20)->create();
         Album::factory(30)->create();
         $this->call(BandSeeder::class);
+        Track::factory(10)->create();
     }
 }

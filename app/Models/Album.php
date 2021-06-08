@@ -21,4 +21,8 @@ class Album extends Model
     public function getPathAttribute() {
         return 'albums.show';
     }
+
+    public static function getALbumsLength() {
+        return Album::all()->count();
+    }
 }
